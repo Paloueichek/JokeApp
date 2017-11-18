@@ -8,12 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		175755DA1FC0322500EEE434 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175755D91FC0322500EEE434 /* AppDelegate.swift */; };
-		175755DC1FC0322500EEE434 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175755DB1FC0322500EEE434 /* ViewController.swift */; };
+		175755DC1FC0322500EEE434 /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175755DB1FC0322500EEE434 /* MenuVC.swift */; };
 		175755DF1FC0322500EEE434 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 175755DD1FC0322500EEE434 /* Main.storyboard */; };
 		175755E11FC0322500EEE434 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 175755E01FC0322500EEE434 /* Assets.xcassets */; };
 		175755E41FC0322500EEE434 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 175755E21FC0322500EEE434 /* LaunchScreen.storyboard */; };
 		175755EF1FC0322500EEE434 /* JokeAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175755EE1FC0322500EEE434 /* JokeAppTests.swift */; };
 		175755FA1FC0322500EEE434 /* JokeAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175755F91FC0322500EEE434 /* JokeAppUITests.swift */; };
+		175756081FC03C1000EEE434 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175756071FC03C1000EEE434 /* NetworkManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +37,7 @@
 /* Begin PBXFileReference section */
 		175755D61FC0322500EEE434 /* JokeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JokeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		175755D91FC0322500EEE434 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		175755DB1FC0322500EEE434 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		175755DB1FC0322500EEE434 /* MenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuVC.swift; sourceTree = "<group>"; };
 		175755DE1FC0322500EEE434 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		175755E01FC0322500EEE434 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		175755E31FC0322500EEE434 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +48,7 @@
 		175755F51FC0322500EEE434 /* JokeAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = JokeAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		175755F91FC0322500EEE434 /* JokeAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeAppUITests.swift; sourceTree = "<group>"; };
 		175755FB1FC0322500EEE434 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		175756071FC03C1000EEE434 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,11 +100,12 @@
 			isa = PBXGroup;
 			children = (
 				175755D91FC0322500EEE434 /* AppDelegate.swift */,
-				175755DB1FC0322500EEE434 /* ViewController.swift */,
+				175755DB1FC0322500EEE434 /* MenuVC.swift */,
 				175755DD1FC0322500EEE434 /* Main.storyboard */,
 				175755E01FC0322500EEE434 /* Assets.xcassets */,
 				175755E21FC0322500EEE434 /* LaunchScreen.storyboard */,
 				175755E51FC0322500EEE434 /* Info.plist */,
+				175756071FC03C1000EEE434 /* NetworkManager.swift */,
 			);
 			path = JokeApp;
 			sourceTree = "<group>";
@@ -259,7 +262,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				175755DC1FC0322500EEE434 /* ViewController.swift in Sources */,
+				175756081FC03C1000EEE434 /* NetworkManager.swift in Sources */,
+				175755DC1FC0322500EEE434 /* MenuVC.swift in Sources */,
 				175755DA1FC0322500EEE434 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -427,6 +431,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8F2HEPF2DN;
 				INFOPLIST_FILE = JokeApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = p.aloueichek.JokeApp;
@@ -441,6 +446,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8F2HEPF2DN;
 				INFOPLIST_FILE = JokeApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = p.aloueichek.JokeApp;
