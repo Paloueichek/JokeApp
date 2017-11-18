@@ -48,16 +48,10 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gY5-Vb-V5g">
                                 <rect key="frame" x="131" y="576" width="107" height="30"/>
                                 <state key="normal" title="History"/>
-                                <connections>
-                                    <action selector="historyBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4vV-hF-bBm"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0np-6w-9PJ">
                                 <rect key="frame" x="16" y="576" width="40" height="30"/>
                                 <state key="normal" title="Share"/>
-                                <connections>
-                                    <action selector="shareBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uD8-UU-dEC"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4b7-iY-8TC">
                                 <rect key="frame" x="313" y="576" width="46" height="30"/>
@@ -90,9 +84,6 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <connections>
-                        <outlet property="replayBtn" destination="4b7-iY-8TC" id="1lp-O9-HOO"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
