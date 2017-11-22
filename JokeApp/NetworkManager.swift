@@ -60,7 +60,10 @@ struct NetworkManager  {
                 } catch {
                     print(error.localizedDescription)
                 }
-                completion(jokeObjectString)
+                DispatchQueue.main.async {
+                     completion(jokeObjectString)
+                }
+               
             }
         }
       task.resume()

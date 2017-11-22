@@ -10,14 +10,23 @@ import UIKit
 
 class MenuVC: UIViewController {
     @IBOutlet weak var textLabel: UILabel!
-   
+    
+    @IBAction func replayButton(_ sender: Any) {
+        self.textLabel.text = ""
+        self.jokeTextCaught()
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-     
-        }
+        self.jokeTextCaught()
+    
+    }
         
-        
+    func jokeTextCaught() {
+        self.textLabel.text = ""
+         NetworkManager.jokeGet(completion: { [weak self] jokeString in self?.textLabel.text = jokeString })
+    }
    
         
     
