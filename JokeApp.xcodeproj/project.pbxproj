@@ -15,6 +15,7 @@
 		175755EF1FC0322500EEE434 /* JokeAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175755EE1FC0322500EEE434 /* JokeAppTests.swift */; };
 		175755FA1FC0322500EEE434 /* JokeAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175755F91FC0322500EEE434 /* JokeAppUITests.swift */; };
 		175756081FC03C1000EEE434 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175756071FC03C1000EEE434 /* NetworkManager.swift */; };
+		17B0A1C41FC2FA4000269F0D /* TableViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B0A1C31FC2FA4000269F0D /* TableViewVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		175755F91FC0322500EEE434 /* JokeAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeAppUITests.swift; sourceTree = "<group>"; };
 		175755FB1FC0322500EEE434 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		175756071FC03C1000EEE434 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		17B0A1C31FC2FA4000269F0D /* TableViewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TableViewVC.swift; path = ViewControllers/TableViewVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				175755E21FC0322500EEE434 /* LaunchScreen.storyboard */,
 				175755E51FC0322500EEE434 /* Info.plist */,
 				175756071FC03C1000EEE434 /* NetworkManager.swift */,
+				17B0A1C31FC2FA4000269F0D /* TableViewVC.swift */,
 			);
 			path = JokeApp;
 			sourceTree = "<group>";
@@ -262,6 +265,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17B0A1C41FC2FA4000269F0D /* TableViewVC.swift in Sources */,
 				175756081FC03C1000EEE434 /* NetworkManager.swift in Sources */,
 				175755DC1FC0322500EEE434 /* MenuVC.swift in Sources */,
 				175755DA1FC0322500EEE434 /* AppDelegate.swift in Sources */,

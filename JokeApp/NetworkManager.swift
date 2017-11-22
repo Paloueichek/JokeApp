@@ -9,11 +9,14 @@
 import Foundation
 import UIKit
 
-struct NetworkManager {
+struct NetworkManager  {
     let type: String
     let value: String
     let id : Int
     let joke: String
+    
+    static var jokeObjectString : String = ""
+  
     
     enum SerializationError: Error {
         case success(String)
@@ -31,35 +34,37 @@ struct NetworkManager {
         self.joke = joke
         
     }
-    static let basePath = "http://api.icndb.com/api"
-    static func jokeGet (completion: @escaping([NetworkManager]) -> ()) {
-        
+    
+    
+    static let basePath = "http://api.icndb.com/jokes/random"
+    static func jokeGet(completion: @escaping(String) -> ()) {
         let url = basePath
         let request = URLRequest(url: URL(string: url)!)
         
-        let task = URLSession.shared.dataTask(with: request) { (data:Data?, response: URLResponse? , error: Error?) in
-            var jokeGetArray: [NetworkManager] = []
+        
+        let task = URLSession.shared.dataTask(with: request) { (data: Data?, response: URLResponse? , error: Error?) in
+           
             if let data = data {
                 do {
-                    
-                    if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
-                        
+                   
+                    if let json = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.mutableContainers) as? [String: Any] {
+                       
                         if let valueCast = json["value"] as? [String: Any] {
-                            if let dataCast = json["joke"] as? [[String: Any]] {
-                                for point in dataCast {
-                                    if let networkObject = try? NetworkManager(json: point){
-                                        jokeGetArray.append(networkObject)
-                                    }
-                                }
+                          
+                            if let jokeCast = valueCast["joke"] as? String {
+                                print(jokeCast)
+                                jokeObjectString = jokeCast
                             }
                         }
-
                     }
                 } catch {
                     print(error.localizedDescription)
                 }
-            
+                completion(jokeObjectString)
             }
         }
+      task.resume()
+    
     }
+    
 }
