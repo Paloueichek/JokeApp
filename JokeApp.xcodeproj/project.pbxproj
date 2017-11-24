@@ -105,13 +105,13 @@
 			isa = PBXGroup;
 			children = (
 				175755D91FC0322500EEE434 /* AppDelegate.swift */,
+				17B0A1C31FC2FA4000269F0D /* TableViewVC.swift */,
 				175755DB1FC0322500EEE434 /* MenuVC.swift */,
 				175755DD1FC0322500EEE434 /* Main.storyboard */,
 				175755E01FC0322500EEE434 /* Assets.xcassets */,
 				175755E21FC0322500EEE434 /* LaunchScreen.storyboard */,
 				175755E51FC0322500EEE434 /* Info.plist */,
 				175756071FC03C1000EEE434 /* NetworkManager.swift */,
-				17B0A1C31FC2FA4000269F0D /* TableViewVC.swift */,
 			);
 			path = JokeApp;
 			sourceTree = "<group>";
