@@ -15,6 +15,7 @@
 		175755EF1FC0322500EEE434 /* JokeAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175755EE1FC0322500EEE434 /* JokeAppTests.swift */; };
 		175755FA1FC0322500EEE434 /* JokeAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175755F91FC0322500EEE434 /* JokeAppUITests.swift */; };
 		175756081FC03C1000EEE434 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175756071FC03C1000EEE434 /* NetworkManager.swift */; };
+		175756481FC74DD100EEE434 /* JokeApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 175756461FC74DD100EEE434 /* JokeApp.xcdatamodeld */; };
 		17B0A1C41FC2FA4000269F0D /* TableViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B0A1C31FC2FA4000269F0D /* TableViewVC.swift */; };
 /* End PBXBuildFile section */
 
@@ -50,6 +51,7 @@
 		175755F91FC0322500EEE434 /* JokeAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeAppUITests.swift; sourceTree = "<group>"; };
 		175755FB1FC0322500EEE434 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		175756071FC03C1000EEE434 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		175756471FC74DD100EEE434 /* JokeApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = JokeApp.xcdatamodel; sourceTree = "<group>"; };
 		17B0A1C31FC2FA4000269F0D /* TableViewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TableViewVC.swift; path = ViewControllers/TableViewVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -81,6 +83,7 @@
 		175755CD1FC0322400EEE434 = {
 			isa = PBXGroup;
 			children = (
+				175756461FC74DD100EEE434 /* JokeApp.xcdatamodeld */,
 				175755D81FC0322500EEE434 /* JokeApp */,
 				175755ED1FC0322500EEE434 /* JokeAppTests */,
 				175755F81FC0322500EEE434 /* JokeAppUITests */,
@@ -269,6 +272,7 @@
 				175756081FC03C1000EEE434 /* NetworkManager.swift in Sources */,
 				175755DC1FC0322500EEE434 /* MenuVC.swift in Sources */,
 				175755DA1FC0322500EEE434 /* AppDelegate.swift in Sources */,
+				175756481FC74DD100EEE434 /* JokeApp.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -562,6 +566,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		175756461FC74DD100EEE434 /* JokeApp.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				175756471FC74DD100EEE434 /* JokeApp.xcdatamodel */,
+			);
+			currentVersion = 175756471FC74DD100EEE434 /* JokeApp.xcdatamodel */;
+			path = JokeApp.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 175755CE1FC0322400EEE434 /* Project object */;
 }

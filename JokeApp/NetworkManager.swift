@@ -16,7 +16,6 @@ struct NetworkManager  {
     let joke: String
     
     static var jokeObjectString : String = ""
-  
     
     enum SerializationError: Error {
         case success(String)
@@ -34,25 +33,19 @@ struct NetworkManager  {
         self.joke = joke
         
     }
-    
-    
     static let basePath = "http://api.icndb.com/jokes/random"
     static func jokeGet(completion: @escaping(String) -> ()) {
         let url = basePath
         let request = URLRequest(url: URL(string: url)!)
-        
-        
         let task = URLSession.shared.dataTask(with: request) { (data: Data?, response: URLResponse? , error: Error?) in
-           
             if let data = data {
                 do {
-                   
                     if let json = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.mutableContainers) as? [String: Any] {
                        
                         if let valueCast = json["value"] as? [String: Any] {
                           
                             if let jokeCast = valueCast["joke"] as? String {
-                                print(jokeCast)
+                                //print(jokeCast)
                                 jokeObjectString = jokeCast
                             }
                         }
@@ -67,7 +60,6 @@ struct NetworkManager  {
             }
         }
       task.resume()
-    
     }
     
 }
