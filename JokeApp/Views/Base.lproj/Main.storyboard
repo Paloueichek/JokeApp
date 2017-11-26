@@ -39,7 +39,8 @@
                                 <rect key="frame" x="352" y="645" width="46" height="30"/>
                                 <state key="normal" title="Replay"/>
                                 <connections>
-                                    <action selector="replayButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="n5z-iy-Nzx"/>
+                                    <action selector="replayButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1EW-q8-fh8"/>
+                                    <action selector="replayButton:" destination="5BN-yM-wey" eventType="touchUpInside" id="sYe-CC-UjP"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Jokes to come" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aJ3-OW-1lZ">
@@ -78,10 +79,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <exit id="5BN-yM-wey" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="134.78260869565219" y="131.25"/>
         </scene>
-        <!--Root View Controller-->
+        <!--Jokes-->
         <scene sceneID="rp2-3t-U0S">
             <objects>
                 <tableViewController id="csQ-WS-2Qg" customClass="TableViewVC" customModule="JokeApp" customModuleProvider="target" sceneMemberID="viewController">
@@ -90,13 +92,30 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="bA1-qX-shg">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="CellID" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="bA1-qX-shg" customClass="jokeCell" customModule="JokeApp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="CellID" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bA1-qX-shg" id="ckv-U8-p7g">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bA1-qX-shg" id="ckv-U8-p7g">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.666666666666664"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hIj-ao-Zmo">
+                                            <rect key="frame" x="8" y="5" width="222" height="33"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="hIj-ao-Zmo" secondAttribute="bottom" constant="5.6666666666666643" id="8EZ-aQ-2Yk"/>
+                                        <constraint firstAttribute="trailing" secondItem="hIj-ao-Zmo" secondAttribute="trailing" constant="184" id="TDR-aP-BLs"/>
+                                        <constraint firstItem="hIj-ao-Zmo" firstAttribute="leading" secondItem="ckv-U8-p7g" secondAttribute="leading" constant="8" id="elN-3J-KMC"/>
+                                        <constraint firstItem="hIj-ao-Zmo" firstAttribute="top" secondItem="ckv-U8-p7g" secondAttribute="top" constant="5" id="uZA-49-NXn"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="jokeTextCell" destination="hIj-ao-Zmo" id="mX0-eQ-3AV"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -104,11 +123,11 @@
                             <outlet property="delegate" destination="csQ-WS-2Qg" id="G2N-Y2-WJf"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="UdL-Md-kEX"/>
+                    <navigationItem key="navigationItem" title="Jokes" id="UdL-Md-kEX"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x65-In-qyi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1864" y="141"/>
+            <point key="canvasLocation" x="1863.7681159420292" y="140.21739130434784"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="FEC-Xg-ffv">

@@ -22,6 +22,9 @@ class JokeManager  {
         return nil
     }
     
+
+    
+    
     func saveInCoreDataWith(saveJoke: String) {
         _ = self.createStringEntity(stringJoke: saveJoke)
         do {
@@ -31,12 +34,27 @@ class JokeManager  {
             print(error)
         }
     }
-
+    
+    func clearData(){
+        do {
+            let context = CoreDataStack.sharedInstance.persistentContainer.viewContext
+            let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: String(describing: Joke.self))
+            do{
+                let objects = try context.fetch(fetchRequest)
+                _ = objects.map{context.delete($0 as! NSManagedObject)}
+            }
+            catch let error {
+                print("\(error)")
+            }
+        }
+        
+    }
+    
     lazy var fetchedResultController:
         NSFetchedResultsController<NSFetchRequestResult> = {
-            let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: String(describing: Joke.self))
+            let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Joke")
             fetchRequest.sortDescriptors = [NSSortDescriptor(key: "text" , ascending: true)]
-            let frc = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: CoreDataStack.sharedInstance.persistentContainer.viewContext, sectionNameKeyPath: nil, cacheName :nil)
+            let frc = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: CoreDataStack.sharedInstance.persistentContainer.viewContext, sectionNameKeyPath: nil, cacheName: nil)
           //  frc.delegate = self
             return frc
             

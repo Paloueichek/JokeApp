@@ -14,7 +14,8 @@ import UIKit
 class TableViewVC: UITableViewController {
     
     let cellID = "CellID"
-  
+
+    
     let jokeManager = JokeManager()
     
     public override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -26,10 +27,15 @@ class TableViewVC: UITableViewController {
 
     public override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
 
-      let cell = tableView.dequeueReusableCell(withIdentifier: cellID , for: indexPath) as UITableViewCell
+      let cell = tableView.dequeueReusableCell(withIdentifier: cellID , for: indexPath) as! TableViewCell
+        
+        if let jokeString = self.jokeManager.fetchedResultController.object(at: indexPath) as? Joke {
+            cell.setJokeString(joke: jokeString)
+        }
      
         return cell
     }
+    
 
 
 }

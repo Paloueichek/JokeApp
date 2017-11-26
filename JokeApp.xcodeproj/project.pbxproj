@@ -20,6 +20,7 @@
 		1757564F1FC9A9F800EEE434 /* Joke+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1757564D1FC9A9F800EEE434 /* Joke+CoreDataClass.swift */; };
 		175756501FC9A9F800EEE434 /* Joke+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1757564E1FC9A9F800EEE434 /* Joke+CoreDataProperties.swift */; };
 		175756571FCAD58100EEE434 /* JokeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175756561FCAD58100EEE434 /* JokeManager.swift */; };
+		179C96441FCB660D0092FA41 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179C96431FCB660D0092FA41 /* TableViewCell.swift */; };
 		17B0A1C41FC2FA4000269F0D /* TableViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B0A1C31FC2FA4000269F0D /* TableViewVC.swift */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +61,7 @@
 		1757564D1FC9A9F800EEE434 /* Joke+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Joke+CoreDataClass.swift"; sourceTree = "<group>"; };
 		1757564E1FC9A9F800EEE434 /* Joke+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Joke+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		175756561FCAD58100EEE434 /* JokeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeManager.swift; sourceTree = "<group>"; };
+		179C96431FCB660D0092FA41 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		17B0A1C31FC2FA4000269F0D /* TableViewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -157,6 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				17B0A1C31FC2FA4000269F0D /* TableViewVC.swift */,
+				179C96431FCB660D0092FA41 /* TableViewCell.swift */,
 				175755DB1FC0322500EEE434 /* MenuVC.swift */,
 			);
 			name = Controllers;
@@ -310,6 +313,7 @@
 				1757564C1FC9A6CD00EEE434 /* CoreDataStack.swift in Sources */,
 				17B0A1C41FC2FA4000269F0D /* TableViewVC.swift in Sources */,
 				175756081FC03C1000EEE434 /* NetworkManager.swift in Sources */,
+				179C96441FCB660D0092FA41 /* TableViewCell.swift in Sources */,
 				175755DC1FC0322500EEE434 /* MenuVC.swift in Sources */,
 				175755DA1FC0322500EEE434 /* AppDelegate.swift in Sources */,
 				175756501FC9A9F800EEE434 /* Joke+CoreDataProperties.swift in Sources */,

@@ -15,22 +15,40 @@ class MenuVC: UIViewController {
     let networkManager = NetworkManager()
     
     @IBOutlet weak var textLabel: UILabel!
+    @IBAction func replayButton(_ sender: Any) {
+        
+        self.networkManager.jokeGet{  (result) in
+            self.textLabel.text = result
+            print(result)
+            self.jokeManager.saveInCoreDataWith(saveJoke: result)
+        }
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.networkManager.jokeGet{  (result) in
-        self.textLabel.text = result
-            print(result)
-            self.jokeManager.saveInCoreDataWith(saveJoke: result)
-            }
-         }
+        self.networkManager.jokeGet {  (result) in
+                self.textLabel.text = result
+                print(result)
+                self.jokeManager.saveInCoreDataWith(saveJoke: result)
+            
+            
+        }
+        self.updateTableContent()
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-  
+    func updateTableContent() {
+        do {
+            try self.jokeManager.fetchedResultController.performFetch()
+            print("count check ")
+        } catch let error {
+            print("Error: \(error)")}
+        
+    }
 }
 
