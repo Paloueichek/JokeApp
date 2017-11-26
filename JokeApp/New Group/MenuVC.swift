@@ -17,23 +17,13 @@ class MenuVC: UIViewController {
     @IBOutlet weak var textLabel: UILabel!
     @IBAction func replayButton(_ sender: Any) {
         
-        self.networkManager.jokeGet{  (result) in
-            self.textLabel.text = result
-            print(result)
-            self.jokeManager.saveInCoreDataWith(saveJoke: result)
-        }
+        self.updateTableContent()
         
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.networkManager.jokeGet {  (result) in
-                self.textLabel.text = result
-                print(result)
-                self.jokeManager.saveInCoreDataWith(saveJoke: result)
-            
-            
-        }
+      
         self.updateTableContent()
     }
     
@@ -47,8 +37,17 @@ class MenuVC: UIViewController {
             try self.jokeManager.fetchedResultController.performFetch()
             print("count check ")
         } catch let error {
-            print("Error: \(error)")}
+            print("Error: \(error)")
+            
+        }
+        self.networkManager.jokeGet{  (result) in
+            self.textLabel.text = result
+            print(result)
+            self.jokeManager.saveInCoreDataWith(saveJoke: result)
+        }
         
     }
+    
+    
 }
 

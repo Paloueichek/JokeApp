@@ -32,11 +32,8 @@ class TableViewVC: UITableViewController {
         if let jokeString = self.jokeManager.fetchedResultController.object(at: indexPath) as? Joke {
             cell.setJokeString(joke: jokeString)
         }
-     
         return cell
     }
-    
-
-
+  
 }
 

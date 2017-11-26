@@ -30,6 +30,7 @@ class JokeManager  {
         do {
             try
                 CoreDataStack.sharedInstance.persistentContainer.viewContext.save()
+                print("save Successful")
         } catch let error {
             print(error)
         }
