@@ -10,49 +10,27 @@ import UIKit
 import CoreData
 
 class MenuVC: UIViewController {
-    var jokeArray: [String] = []
+    
+    let jokeManager = JokeManager()
+    let networkManager = NetworkManager()
     
     @IBOutlet weak var textLabel: UILabel!
-    @IBAction func replayButton(_ sender: Any) {
-        self.textLabel.text = ""
-        self.jokeTextCaught()
-    }
     
     override func viewDidLoad() {
+        super.viewDidLoad()
         
+        self.networkManager.jokeGet{  (result) in
+        self.textLabel.text = result
+            print(result)
+            self.jokeManager.saveInCoreDataWith(saveJoke: result)
+            }
+         }
     
-    }
-    func jokeTextCaught() {
-        
-        
-        print(jokeArray)
-    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    private func createStringEntity(dictionary: [String: AnyObject]) -> NSManagedObject? {
-        
-        let context = CoreDataStack.sharedInstance.persistentContainer.viewContext
-        if let stringEntity = NSEntityDescription.insertNewObject(forEntityName: "Joke", into: context) as? Joke {
-            
-            stringEntity.text = dictionary["text"] as? String
-            return stringEntity
-        }
-        return nil
-    }
-    
-    private func saveInCoreDataWith(array: [[String: AnyObject]]) {
-        
-        _ = array.map{ self.createStringEntity(dictionary: $0)}
-        do {
-            try
-            CoreDataStack.sharedInstance.persistentContainer.viewContext.save()
-        } catch let error {
-            print(error)
-        }
-        
-    }
+  
 }
 

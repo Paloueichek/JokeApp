@@ -11,31 +11,26 @@ import UIKit
 
 
 
-class TableViewVC: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class TableViewVC: UITableViewController {
     
+    let cellID = "CellID"
   
-    var menuObject = MenuVC()
+    let jokeManager = JokeManager()
     
-    
-    @IBAction func backButton(_ sender: Any) {
+    public override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if let count = self.jokeManager.fetchedResultController.sections?.first?.numberOfObjects {
+            return count
+        }
+        return 0
     }
-    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.menuObject.jokeArray.count
-    }
-    
-    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
-        
-      let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as UITableViewCell
-        cell.textLabel?.text = self.menuObject.jokeArray[indexPath.row]
+
+    public override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
+
+      let cell = tableView.dequeueReusableCell(withIdentifier: cellID , for: indexPath) as UITableViewCell
+     
         return cell
     }
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        print(menuObject)
-    }
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
+
+
 }
 
