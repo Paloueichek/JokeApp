@@ -14,13 +14,13 @@ class MenuVC: UIViewController {
     let jokeManager = JokeManager()
     let networkManager = NetworkManager()
     var joke : Joke? = nil
+    var isJokeOfToday: Bool = false
     
     @IBOutlet weak var textLabel: UILabel!
     @IBAction func replayButton(_ sender: Any) {
         self.updateTableContent()
     }
     @IBAction func shareButton(_ sender: Any) {
-        
         if let joke  = joke {
                 let share = UIActivityViewController(activityItems: [joke.text], applicationActivities: nil)
                 self.present(share, animated: true)
@@ -31,6 +31,20 @@ class MenuVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.updateTableContent()
+        self.scheduleTimer()
+    }
+    
+    func scheduleTimer() {
+        let cal = Calendar(identifier: .gregorian)
+        let startOfToday = cal.startOfDay(for: Date())
+        if let startOfTomorrow = cal.date(byAdding: .day, value: 1, to: startOfToday) {
+            let interval = startOfTomorrow.timeIntervalSince(Date())
+            var timer = Timer.scheduledTimer(withTimeInterval: interval, repeats: false) { [weak self] timer in
+                self?.updateTableContent()
+                self?.scheduleTimer()
+                self?.isJokeOfToday = true
+            }
+        }
     }
     
     override func didReceiveMemoryWarning() {
