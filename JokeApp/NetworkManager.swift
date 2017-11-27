@@ -32,13 +32,10 @@ class NetworkManager: NSObject {
                 catch {
                     print(error.localizedDescription)
                 }
-                
             }
         }
         task.resume()
-    }
-    
-    
+    } 
     enum Result<T> {
         case Success(T)
         case Error(String)

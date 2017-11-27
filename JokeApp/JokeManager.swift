@@ -12,7 +12,7 @@ import CoreData
 
 class JokeManager  {
     
-    func createStringEntity(stringJoke: String) -> NSManagedObject? {
+    func createStringEntity(stringJoke: String) -> Joke? {
         
         let context = CoreDataStack.sharedInstance.persistentContainer.viewContext
         if let stringEntity = NSEntityDescription.insertNewObject(forEntityName: "Joke", into: context) as? Joke {
@@ -26,14 +26,16 @@ class JokeManager  {
 
     
     
-    func saveInCoreDataWith(saveJoke: String) {
-        _ = self.createStringEntity(stringJoke: saveJoke)
+    func saveInCoreDataWith(saveJoke: String) -> Joke? {
+        let joke = self.createStringEntity(stringJoke: saveJoke)
         do {
             try
                 CoreDataStack.sharedInstance.persistentContainer.viewContext.save()
                 print("save Successful")
+            return joke
         } catch let error {
             print(error)
+            return nil
         }
     }
     

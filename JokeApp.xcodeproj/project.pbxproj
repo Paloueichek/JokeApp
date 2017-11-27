@@ -23,7 +23,6 @@
 		179C96441FCB660D0092FA41 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179C96431FCB660D0092FA41 /* TableViewCell.swift */; };
 		17B0A1C41FC2FA4000269F0D /* TableViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B0A1C31FC2FA4000269F0D /* TableViewVC.swift */; };
 		17C2BCF41FCC0C9C000A817F /* DateFormatter + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C2BCF31FCC0C9C000A817F /* DateFormatter + Ext.swift */; };
-		17C2BCF61FCC0CDD000A817F /* JokeSharer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C2BCF51FCC0CDD000A817F /* JokeSharer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,7 +65,6 @@
 		179C96431FCB660D0092FA41 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		17B0A1C31FC2FA4000269F0D /* TableViewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewVC.swift; sourceTree = "<group>"; };
 		17C2BCF31FCC0C9C000A817F /* DateFormatter + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter + Ext.swift"; sourceTree = "<group>"; };
-		17C2BCF51FCC0CDD000A817F /* JokeSharer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeSharer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,7 +120,6 @@
 				175756561FCAD58100EEE434 /* JokeManager.swift */,
 				175756071FC03C1000EEE434 /* NetworkManager.swift */,
 				17C2BCF31FCC0C9C000A817F /* DateFormatter + Ext.swift */,
-				17C2BCF51FCC0CDD000A817F /* JokeSharer.swift */,
 				175756521FC9ACCF00EEE434 /* Controllers */,
 				175756511FC9AC9C00EEE434 /* Models */,
 				175756551FC9F7B800EEE434 /* Views */,
@@ -323,7 +320,6 @@
 				179C96441FCB660D0092FA41 /* TableViewCell.swift in Sources */,
 				175755DC1FC0322500EEE434 /* MenuVC.swift in Sources */,
 				175755DA1FC0322500EEE434 /* AppDelegate.swift in Sources */,
-				17C2BCF61FCC0CDD000A817F /* JokeSharer.swift in Sources */,
 				175756501FC9A9F800EEE434 /* Joke+CoreDataProperties.swift in Sources */,
 				175756481FC74DD100EEE434 /* JokeApp.xcdatamodeld in Sources */,
 			);

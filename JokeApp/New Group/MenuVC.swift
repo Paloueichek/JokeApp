@@ -13,17 +13,23 @@ class MenuVC: UIViewController {
     
     let jokeManager = JokeManager()
     let networkManager = NetworkManager()
+    var joke : Joke? = nil
     
     @IBOutlet weak var textLabel: UILabel!
     @IBAction func replayButton(_ sender: Any) {
-        
         self.updateTableContent()
-        
     }
+    @IBAction func shareButton(_ sender: Any) {
+        
+        if let joke  = joke {
+                let share = UIActivityViewController(activityItems: [joke.text], applicationActivities: nil)
+                self.present(share, animated: true)
+        }
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-      
         self.updateTableContent()
     }
     
@@ -41,13 +47,11 @@ class MenuVC: UIViewController {
             
         }
         self.networkManager.jokeGet{  (result) in
-            self.textLabel.text = result
             print(result)
-            self.jokeManager.saveInCoreDataWith(saveJoke: result)
+            let joke = self.jokeManager.saveInCoreDataWith(saveJoke: result)
+            self.joke = joke
+            self.textLabel.text = result
         }
-        
     }
-    
-    
 }
 

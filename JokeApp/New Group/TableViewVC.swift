@@ -15,12 +15,12 @@ import UIKit
 class TableViewVC: UITableViewController {
     
     private let cellID = "Cell_ID"
-
     private let jokeManager = JokeManager()
-    private let jokeSharer = JokeSharer()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+      
         try? self.jokeManager.fetchedResultController.performFetch()
     }
     
@@ -38,7 +38,8 @@ class TableViewVC: UITableViewController {
         if let joke = self.jokeManager.fetchedResultController.object(at: indexPath) as? Joke {
             cell.setJoke(joke: joke)
             cell.shareAction = { [weak self] in
-                self?.jokeSharer.shareJoke(joke)
+                let share = UIActivityViewController(activityItems: [joke.text], applicationActivities: [])
+                self?.present(share, animated: true)
             }
         }
         return cell
