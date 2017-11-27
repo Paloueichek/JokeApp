@@ -17,6 +17,7 @@ class JokeManager  {
         let context = CoreDataStack.sharedInstance.persistentContainer.viewContext
         if let stringEntity = NSEntityDescription.insertNewObject(forEntityName: "Joke", into: context) as? Joke {
             stringEntity.text = stringJoke
+            stringEntity.date = Date()
             return stringEntity
         }
         return nil
@@ -54,7 +55,7 @@ class JokeManager  {
     lazy var fetchedResultController:
         NSFetchedResultsController<NSFetchRequestResult> = {
             let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Joke")
-            fetchRequest.sortDescriptors = [NSSortDescriptor(key: "text" , ascending: true)]
+            fetchRequest.sortDescriptors = [NSSortDescriptor(key: "date" , ascending: false)]
             let frc = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: CoreDataStack.sharedInstance.persistentContainer.viewContext, sectionNameKeyPath: nil, cacheName: nil)
           //  frc.delegate = self
             return frc

@@ -11,12 +11,18 @@ import UIKit
 
 
 
+
 class TableViewVC: UITableViewController {
     
-    let cellID = "CellID"
+    private let cellID = "Cell_ID"
 
+    private let jokeManager = JokeManager()
+    private let jokeSharer = JokeSharer()
     
-    let jokeManager = JokeManager()
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        try? self.jokeManager.fetchedResultController.performFetch()
+    }
     
     public override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if let count = self.jokeManager.fetchedResultController.sections?.first?.numberOfObjects {
@@ -29,8 +35,11 @@ class TableViewVC: UITableViewController {
 
       let cell = tableView.dequeueReusableCell(withIdentifier: cellID , for: indexPath) as! TableViewCell
         
-        if let jokeString = self.jokeManager.fetchedResultController.object(at: indexPath) as? Joke {
-            cell.setJokeString(joke: jokeString)
+        if let joke = self.jokeManager.fetchedResultController.object(at: indexPath) as? Joke {
+            cell.setJoke(joke: joke)
+            cell.shareAction = { [weak self] in
+                self?.jokeSharer.shareJoke(joke)
+            }
         }
         return cell
     }
