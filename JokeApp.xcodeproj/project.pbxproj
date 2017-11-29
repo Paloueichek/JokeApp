@@ -19,8 +19,9 @@
 		1757564C1FC9A6CD00EEE434 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1757564B1FC9A6CD00EEE434 /* CoreDataStack.swift */; };
 		1757564F1FC9A9F800EEE434 /* Joke+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1757564D1FC9A9F800EEE434 /* Joke+CoreDataClass.swift */; };
 		175756501FC9A9F800EEE434 /* Joke+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1757564E1FC9A9F800EEE434 /* Joke+CoreDataProperties.swift */; };
-		175756571FCAD58100EEE434 /* JokeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175756561FCAD58100EEE434 /* JokeManager.swift */; };
+		175756571FCAD58100EEE434 /* JokeManagerSave.swift in Sources */ = {isa = PBXBuildFile; fileRef = 175756561FCAD58100EEE434 /* JokeManagerSave.swift */; };
 		179C96441FCB660D0092FA41 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 179C96431FCB660D0092FA41 /* TableViewCell.swift */; };
+		17AFAD551FCEE1FF00C16B57 /* JokeManagerFetch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17AFAD541FCEE1FF00C16B57 /* JokeManagerFetch.swift */; };
 		17B0A1C41FC2FA4000269F0D /* TableViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17B0A1C31FC2FA4000269F0D /* TableViewVC.swift */; };
 		17C2BCF41FCC0C9C000A817F /* DateFormatter + Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17C2BCF31FCC0C9C000A817F /* DateFormatter + Ext.swift */; };
 /* End PBXBuildFile section */
@@ -61,8 +62,9 @@
 		1757564B1FC9A6CD00EEE434 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		1757564D1FC9A9F800EEE434 /* Joke+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Joke+CoreDataClass.swift"; sourceTree = "<group>"; };
 		1757564E1FC9A9F800EEE434 /* Joke+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Joke+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		175756561FCAD58100EEE434 /* JokeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeManager.swift; sourceTree = "<group>"; };
+		175756561FCAD58100EEE434 /* JokeManagerSave.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeManagerSave.swift; sourceTree = "<group>"; };
 		179C96431FCB660D0092FA41 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		17AFAD541FCEE1FF00C16B57 /* JokeManagerFetch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JokeManagerFetch.swift; sourceTree = "<group>"; };
 		17B0A1C31FC2FA4000269F0D /* TableViewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewVC.swift; sourceTree = "<group>"; };
 		17C2BCF31FCC0C9C000A817F /* DateFormatter + Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DateFormatter + Ext.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -117,7 +119,8 @@
 			children = (
 				175756461FC74DD100EEE434 /* JokeApp.xcdatamodeld */,
 				175755D91FC0322500EEE434 /* AppDelegate.swift */,
-				175756561FCAD58100EEE434 /* JokeManager.swift */,
+				175756561FCAD58100EEE434 /* JokeManagerSave.swift */,
+				17AFAD541FCEE1FF00C16B57 /* JokeManagerFetch.swift */,
 				175756071FC03C1000EEE434 /* NetworkManager.swift */,
 				17C2BCF31FCC0C9C000A817F /* DateFormatter + Ext.swift */,
 				175756521FC9ACCF00EEE434 /* Controllers */,
@@ -313,11 +316,12 @@
 			files = (
 				1757564F1FC9A9F800EEE434 /* Joke+CoreDataClass.swift in Sources */,
 				17C2BCF41FCC0C9C000A817F /* DateFormatter + Ext.swift in Sources */,
-				175756571FCAD58100EEE434 /* JokeManager.swift in Sources */,
+				175756571FCAD58100EEE434 /* JokeManagerSave.swift in Sources */,
 				1757564C1FC9A6CD00EEE434 /* CoreDataStack.swift in Sources */,
 				17B0A1C41FC2FA4000269F0D /* TableViewVC.swift in Sources */,
 				175756081FC03C1000EEE434 /* NetworkManager.swift in Sources */,
 				179C96441FCB660D0092FA41 /* TableViewCell.swift in Sources */,
+				17AFAD551FCEE1FF00C16B57 /* JokeManagerFetch.swift in Sources */,
 				175755DC1FC0322500EEE434 /* MenuVC.swift in Sources */,
 				175755DA1FC0322500EEE434 /* AppDelegate.swift in Sources */,
 				175756501FC9A9F800EEE434 /* Joke+CoreDataProperties.swift in Sources */,

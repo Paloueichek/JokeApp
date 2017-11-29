@@ -10,27 +10,31 @@ import Foundation
 import UIKit
 import CoreData
 
+protocol NetworkManagerProtocol {
+    func jokeGet(completion: ((String)->()))    
+}
 class NetworkManager: NSObject {
     private let basePath = "http://api.icndb.com/jokes/random"
-    func jokeGet(completion: @escaping(String)->()) {
-        
+    
+    func jokeGet(completion: @escaping (Result<(String)>)->()) {
         let url = basePath
         let request = URLRequest(url: URL(string: url)!)
         let task = URLSession.shared.dataTask(with: request) { (data: Data? , response: URLResponse?, error: Error?) in
             if let data = data {
                 do {
+                    guard error == nil else { return completion(.Error("Something went wrong"))}
                     if let json = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.mutableContainers) as? [String:Any] {
                         if let valueCast = json["value"] as? [String: Any] {
                             if let jokeCast = valueCast["joke"] as? String {
                                 DispatchQueue.main.async{
-                                completion(jokeCast)
+                                completion(.Success(jokeCast))
                                 }
                             }
                         }
                     }     
                 }
-                catch {
-                    print(error.localizedDescription)
+                catch let error{
+                    return completion(.Error(error.localizedDescription))
                 }
             }
         }

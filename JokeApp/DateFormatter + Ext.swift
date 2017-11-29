@@ -9,7 +9,6 @@
 import Foundation
 
 extension DateFormatter {
-    
     static let jokeDateFormatter: DateFormatter = {
         let formatter = DateFormatter()
         formatter.dateFormat = "hh:mm dd:MM:yyyy"

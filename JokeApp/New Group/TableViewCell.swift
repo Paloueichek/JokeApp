@@ -8,15 +8,12 @@
 
 import Foundation
 import UIKit
-
-
-
 class TableViewCell: UITableViewCell {
     
     @IBOutlet private weak var dateLabel: UILabel!
     @IBOutlet private weak var jokeLabel: UILabel!
-    
     var shareAction: (() ->Void)?
+    var sharePrint: (() ->Void)?
     
     func setJoke(joke: Joke) {
         self.jokeLabel.text = joke.text
@@ -24,10 +21,10 @@ class TableViewCell: UITableViewCell {
             self.dateLabel.text = DateFormatter.jokeDateFormatter.string(from: date)
         }
     }
-    
     @IBAction private func shareButtonTapped() {
         self.shareAction?()
+        }
     }
-}
+
 
 

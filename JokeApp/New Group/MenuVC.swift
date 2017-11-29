@@ -11,8 +11,10 @@ import CoreData
 
 class MenuVC: UIViewController {
     
-    let jokeManager = JokeManager()
-    let networkManager = NetworkManager()
+    var jokeManagerSave : JokeManagerSave? = nil
+    var jokeManagerFetch : JokeManagerFetch? = nil
+    var networkManager : NetworkManager? = nil
+    
     var joke : Joke? = nil
     var isJokeOfToday: Bool = false
     
@@ -25,16 +27,20 @@ class MenuVC: UIViewController {
                 let share = UIActivityViewController(activityItems: [joke.text], applicationActivities: nil)
                 self.present(share, animated: true)
         }
-    }
-    
-    
+    } 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.updateTableContent()
         self.scheduleTimer()
     }
     
-    func scheduleTimer() {
+    func inject(jokeManagerSave : JokeManagerSave, jokeManagerFetch : JokeManagerFetch, networkManager : NetworkManager) {
+        self.jokeManagerSave = jokeManagerSave
+        self.jokeManagerFetch = jokeManagerFetch
+        self.networkManager = networkManager
+    }
+    
+   private func scheduleTimer() {
         let cal = Calendar(identifier: .gregorian)
         let startOfToday = cal.startOfDay(for: Date())
         if let startOfTomorrow = cal.date(byAdding: .day, value: 1, to: startOfToday) {
@@ -47,25 +53,35 @@ class MenuVC: UIViewController {
         }
     }
     
-    override func didReceiveMemoryWarning() {
+ override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    func updateTableContent() {
+ private  func updateTableContent() {
         do {
-            try self.jokeManager.fetchedResultController.performFetch()
-            print("count check ")
+            try self.jokeManagerFetch?.fetchedResultController.performFetch()
         } catch let error {
-            print("Error: \(error)")
-            
+            print("Error: \(error.localizedDescription)")        }
+          self.networkManager?.jokeGet{  (result) in
+            switch result {
+            case .Success(let data):
+                self.jokeManagerFetch?.clearData()
+                let joke = self.jokeManagerSave?.saveInCoreDataWith(saveJoke: data)
+                self.joke = joke
+                self.textLabel.text = data
+            case .Error(let message):
+                self.showAlertWith(title: "Error", message: message)
+            }
         }
-        self.networkManager.jokeGet{  (result) in
-            print(result)
-            let joke = self.jokeManager.saveInCoreDataWith(saveJoke: result)
-            self.joke = joke
-            self.textLabel.text = result
+    }
+    func showAlertWith(title: String, message: String, style: UIAlertControllerStyle = .alert) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: style)
+        let action = UIAlertAction(title: title, style: .default) { (action) in
+            self.dismiss(animated: true, completion: nil)
         }
+        alertController.addAction(action)
+        self.present(alertController, animated: true, completion: nil)
     }
 }
 
